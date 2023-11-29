@@ -16,12 +16,61 @@
   }
 }
 
+@layer utilities {
+  .h1-bold {
+    @apply font-josefin text-4xl font-bold md:text-5xl;
+  }
+  .h2-bold {
+    @apply font-josefin text-3xl font-bold md:text-4xl;
+  }
+  .h3-bold {
+    @apply font-josefin text-2xl font-bold md:text-3xl;
+  }
+  .h4-bold {
+    @apply font-josefin text-xl font-bold md:text-2xl;
+  }
+  .color-paragraph {
+    @apply text-gray-500 dark:text-white/60;
+  }
+  .color-h2 {
+    @apply text-dark-800 dark:text-white/95;
+  }
+  .debug {
+    @apply border border-red-500;
+  }
+
+  .primary-gradient {
+    @apply bg-gradient-to-r from-[#2d50dd] to-[#2da7dd];
+  }
+  .primary-gradient:hover {
+    @apply bg-gradient-to-r from-[#2d50dd] to-[#2dddba];
+  }
+  .footer-gradient {
+    @apply bg-gradient-to-r from-accent-600 to-primary-500
+    dark:from-accent-800/50 dark:to-accent-700/70;
+  }
+  .hero-bg-color {
+    @apply bg-primary-100/30 dark:bg-darkmode-800;
+  }
+}
+
 body {
-  color: rgb(var(--foreground-rgb));
+  /* color: rgb(var(--foreground-rgb));
   background: linear-gradient(
       to bottom,
       transparent,
       rgb(var(--background-end-rgb))
     )
-    rgb(var(--background-start-rgb));
+    rgb(var(--background-start-rgb)); */
+  font-family: "Inter", sans-serif;
+}
+
+/* .primary-gradient {
+
+  background: linear-gradient(129deg, #2d50dd 0%, #2da7dd 100%);
+} */
+
+.icon-blue {
+  filter: invert(63%) sepia(54%) saturate(2827%) hue-rotate(166deg)
+    brightness(94%) contrast(84%);
 }
