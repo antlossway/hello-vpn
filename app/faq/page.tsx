@@ -2,6 +2,8 @@ import { getPage } from "@/lib/wp-rest"
 import React from "react"
 import parseHTML from "html-react-parser"
 
+export const revalidate = parseInt(process.env.REVALIDATE_INTERVAL || "60")
+
 const FAQ = async () => {
   const post = await getPage("faq")
 
