@@ -10,7 +10,7 @@ const Pricing = () => {
     >
       <h2 className="h2-bold color-h2 text-center uppercase">Pricing</h2>
       {/* <div className="mt-10 max-w-3xl grid grid-cols-1 gap-4 sm:grid-cols-2 sm:items-center md:gap-8"> */}
-      <div className=" w-full mx-auto mt-10  flex flex-col sm:flex-row justify-center items-stretch flex-wrap gap-4 md:gap-8 debug">
+      <div className=" w-full mx-auto mt-10  flex flex-col sm:flex-row justify-center items-stretch flex-wrap gap-4 md:gap-8">
         {/* Default Plan */}
 
         {PricingData.map((plan) => (
