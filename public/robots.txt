@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://hello-vpn.com
+
+# Sitemaps
+Sitemap: https://hello-vpn.com/sitemap.xml

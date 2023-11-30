@@ -19,9 +19,7 @@ const Navbar = ({ withThemeSwitch = true }: Props) => {
     >
       {/* icon */}
 
-      <Link href="/">
-        <SiteLogo />
-      </Link>
+      <SiteLogo />
 
       <div className="flex items-center gap-10">
         {/* theme switch */}

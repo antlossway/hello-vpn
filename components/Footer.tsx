@@ -28,9 +28,12 @@ const Footer = () => {
 
             {/* contact info */}
 
-            <p className="mx-auto max-w-md text-center leading-relaxed text-white/70 lg:text-left">
-              <Link href="/contact">info@hello-vpn.com</Link>
-            </p>
+            <Link
+              href="/contact"
+              className="mx-auto max-w-md text-center leading-relaxed text-white/70 lg:text-left"
+            >
+              info@hello-vpn.com
+            </Link>
           </div>
 
           {/* <ul className="mt-12 flex flex-wrap justify-center gap-6 md:gap-8 lg:mt-0 lg:justify-end lg:gap-12">

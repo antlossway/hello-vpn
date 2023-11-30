@@ -28,13 +28,14 @@ const FeatureItem = ({ children }: { children: string }) => {
 type Props = {
   title: string
   price: string
+  bill: string // per month | per day | per project
   features: string[]
   active?: boolean
 }
-const PricingCard = ({ title, price, features, active }: Props) => {
+const PricingCard = ({ title, price, bill, features, active }: Props) => {
   return (
     <div
-      className={`p-6 h-full sm:px-8 lg:p-12 rounded-2xl shadow-sm border ${
+      className={`p-6 max-w-[400px] h-full sm:px-8 lg:p-12 rounded-2xl shadow-sm border ${
         active
           ? "border-primary-500   ring-1 ring-primary-500"
           : "border-gray-200"
@@ -53,9 +54,7 @@ const PricingCard = ({ title, price, features, active }: Props) => {
               {price}€{/* euro sign */}
             </strong>
 
-            {title !== "Project" ? (
-              <span className="text-sm font-medium text-gray-700">/month</span>
-            ) : null}
+            <span className="text-sm font-medium color-paragraph">/{bill}</span>
           </p>
         </div>
 

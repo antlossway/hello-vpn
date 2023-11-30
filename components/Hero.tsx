@@ -37,7 +37,7 @@ const Hero = () => {
         </div>
 
         {/* qualification */}
-        <div className="mt-8 flex gap-10">
+        {/* <div className="mt-8 flex gap-10">
           <div>
             <p className="text-2xl font-bold text-dark-800 dark:text-white/80">
               15
@@ -53,7 +53,7 @@ const Hero = () => {
             </p>
             <p className="color-paragraph ">satisfied customers</p>
           </div>
-        </div>
+        </div> */}
       </div>
 
       <Image
