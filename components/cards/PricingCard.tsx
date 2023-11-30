@@ -35,7 +35,7 @@ type Props = {
 const PricingCard = ({ title, price, bill, features, active }: Props) => {
   return (
     <div
-      className={`p-6 max-w-[400px] h-full sm:px-8 lg:p-12 rounded-2xl shadow-sm border ${
+      className={`p-6 sm:px-8 lg:p-12 rounded-2xl shadow-sm border ${
         active
           ? "border-primary-500   ring-1 ring-primary-500"
           : "border-gray-200"
@@ -78,7 +78,7 @@ const PricingCard = ({ title, price, bill, features, active }: Props) => {
           <ButtonCTA
             link="/contact"
             text="Get Started"
-            otherClasses="border border-primary-500 bg-white text-primary-500 hover:ring-1 hover:ring-indigo-600 active:text-indigo-500 "
+            otherClasses="border border-primary-500 dark:border-accent-600 bg-white dark:bg-white/80 text-primary-500 dark:text-accent-600 hover:ring-1 hover:ring-indigo-600 active:text-indigo-500 "
           />
         )}
       </div>

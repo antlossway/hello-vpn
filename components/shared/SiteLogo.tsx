@@ -5,7 +5,7 @@ import React from "react"
 const SiteLogo = () => {
   return (
     <Link href="/">
-      <figure className="relative w-[150px] h-[100px] ">
+      <figure className=" relative hover:opacity-50 transition ">
         {/* <Image
           src="/logo/logo_lightmode.svg"
           fill={true}
@@ -21,7 +21,8 @@ const SiteLogo = () => {
         <Image
           // src="/logo/logo_darkmode.svg"
           src="/logo/logo-puffin-white.png"
-          fill={true}
+          width={150}
+          height={100}
           alt="logo"
           className=" object-contain"
         />

@@ -15,7 +15,7 @@ const Navbar = ({ withThemeSwitch = true }: Props) => {
   return (
     <nav
       id="navbar"
-      className="z-200 p-4 flex justify-between items-center footer-gradient rounded-bl-[80px] sm:px-10 lg:px-16 "
+      className="z-200 px-8 py-6 flex justify-between items-center footer-gradient rounded-bl-[80px] sm:px-12 lg:px-16 "
     >
       {/* icon */}
 
@@ -28,11 +28,7 @@ const Navbar = ({ withThemeSwitch = true }: Props) => {
         {/* menu when desktop */}
         <div className="hidden sm:flex justify-center items-center gap-10">
           {navlist.map((item) => (
-            <Link
-              href={item.path}
-              key={item.name}
-              className="text-white/80 transition hover:text-gray-700/75 dark:text-white/80 dark:hover:text-white/60"
-            >
+            <Link href={item.path} key={item.name} className="text-color-link">
               {item.name}
             </Link>
           ))}
