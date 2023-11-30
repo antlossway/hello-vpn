@@ -19,7 +19,8 @@ const SiteLogo = () => {
           className="hidden dark:block object-contain"
         /> */}
         <Image
-          src="/logo/logo_darkmode.svg"
+          // src="/logo/logo_darkmode.svg"
+          src="/logo/logo-puffin-white.png"
           fill={true}
           alt="logo"
           className=" object-contain"
