@@ -15,10 +15,10 @@ const josefinSans = Josefin_Sans({
 export const metadata: Metadata = {
   title: "Hello VPN",
   description:
-    "Outsourcing B2B VPN service for your business, no bullshit, it works.",
-  // icons: {
-  //   icon: "/favicon.ico",
-  // }
+    "Outsourcing site-to-site VPN service for your business, no bullshit, it works.",
+  icons: {
+    icon: "/favicon.ico",
+  },
 }
 
 export default function RootLayout({

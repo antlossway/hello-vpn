@@ -59,21 +59,21 @@ export const whyus = [
     icon: "/icons/circle-dollar-sign.svg",
     title: "Cost Savings",
     description:
-      "Using VPN outsourcing service will reduce a company's operational expenses, you can save on hiring and training in-house network team.",
+      "Outsourcing your B2B VPN setup and maintenance will reduce your operational expenses, you can save on hiring and training in-house network team.",
   },
   {
     image: "/book.png",
     icon: "/icons/library-big.svg",
     title: "Specialized Expertise",
     description:
-      "We a pool of specialized professionals with a diverse range of skills and experiences, who will apply industry's best practices, ensuring that your company's network is managed and maintained by experts.",
+      "During the 15+ years of hands-on experience in IT field, we have established many site-to-site VPN tunnels with different companies, including telecom giants in the world. You will have a peace of mind that your B2B VPN operations are handled by people who knows their jobs.",
   },
   {
     image: "/dartboard-red.png",
     icon: "/icons/target.svg",
     title: "Focus on Core Business",
     description:
-      "By outsourcing network maintenance, a company can concentrate its internal resources and efforts on core business activities. This allows the organization to prioritize its primary objectives, enhance productivity, and remain competitive in the market.",
+      "By outsourcing your B2B VPN related operations, you can concentrate on core business, enhance productivity, and remain competitive in the market.",
   },
 ]
 

@@ -19,7 +19,9 @@ export default function Home() {
       </div>
       <WhyUs />
 
-      <Pricing />
+      <div className="container mx-auto">
+        <Pricing />
+      </div>
     </main>
   )
 }

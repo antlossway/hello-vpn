@@ -7,13 +7,13 @@ type Props = {
 }
 const IconCircle = ({ icon, title }: Props) => {
   return (
-    <figure className="z-10 p-3.5 bg-primary-100 dark:bg-darkmode-300 rounded-full grid place-content-center place-items-center">
+    <figure className=" z-10 p-2 bg-primary-100 dark:bg-darkmode-300 rounded-full grid place-items-center">
       <Image
         src={icon}
-        width={25}
-        height={25}
+        width={24}
+        height={24}
         alt={`icon-${title}`}
-        className="icon-blue object-contain "
+        className="icon-blue object-cover "
       />
     </figure>
   )

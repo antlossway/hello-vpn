@@ -20,7 +20,7 @@ const Footer = () => {
 
         <div className=" flex flex-col items-center gap-4 md:flex-row md:items-end md:justify-between">
           {/* logo with contact info */}
-          <div className="flex flex-col items-center">
+          <div className="flex flex-col gap-2 items-center">
             {/* site logo */}
             <SiteLogo />
 

@@ -5,7 +5,7 @@ import Navbar from "@/components/Navbar"
 export const metadata = {
   title: "HelloVPN: Site-to-Site VPN as a Service",
   description:
-    "Site-to-Site VPN is the common solution to secure the connection between two sites. However, it can be a challenging task due to various requirements.Don't let VPN setup and maintenance slow you down.We are here to handle the heavy lifting for you.",
+    "Don't let VPN setup and maintenance slow you down. We help you to setup and maintain Site-to-Site IPSec VPN.",
   // icons: {
   //   icon: "/favicon.ico",
   // }
