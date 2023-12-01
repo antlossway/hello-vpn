@@ -7,14 +7,14 @@ const Hero = () => {
   return (
     <section
       id="hero"
-      className="p-12 overflow-hidden hero-bg-color grid justify-items-center items-center sm:grid-cols-2"
+      className="px-6 py-8 overflow-hidden hero-bg-color grid justify-items-center items-center md:grid-cols-2"
     >
       {/* leftside text */}
-      <div className="p-8 md:p-12 lg:px-16  flex flex-col ">
+      <div className="p-4 md:p-12 lg:px-16  flex flex-col ">
         <div className="flex-1 max-w-xl text-left ltr:sm:text-left rtl:sm:text-right ">
-          <h1 className="h1-bold  ">
+          <h1 className="h1-bold ">
             <span>B2B VPN service by </span>
-            <span className="text-primary-500">Hello-VPN</span>
+            <span className="text-primary-500  ">Hello-VPN</span>
           </h1>
           <p className="text-gray-600 dark:text-white/80 mt-4">
             Site-to-Site VPN is the common solution to secure the connection
@@ -61,7 +61,7 @@ const Hero = () => {
         height={500}
         alt="vpn cloud"
         src="/social-clouds-bg-transparent.png"
-        className="hidden sm:block object-cover "
+        className="hidden md:block object-cover "
       />
     </section>
   )
