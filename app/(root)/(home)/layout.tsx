@@ -2,14 +2,13 @@ import Footer from "@/components/Footer"
 import Navbar from "@/components/Navbar"
 // import ThemeSwitch from "@/components/ThemeSwitch"
 
-export const metadata = {
-  title: "HelloVPN | Home",
-  description:
-    "Don't let VPN setup and maintenance slow you down. We are here to handle the heavy lifting for you.",
-  // icons: {
-  //   icon: "/favicon.ico",
-  // }
-}
+// below metadata will appear in search engine results and social media
+// this overrides the metadata from app/layout.tsx
+// export const metadata = {
+//   title: "HelloVPN",
+//   description:
+//     "Outsourcing site-to-site VPN service for your business, no bullshit, it works.",
+// }
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (

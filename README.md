@@ -46,6 +46,22 @@ module.exports = {
 
 ## metadata
 
-got error
+To set meta image, which will appear in search engine result.
 
-> metadata.metadataBase is not set for resolving social open graph or twitter images, using "http://localhost:3000". See https://nextjs.org/docs/app/api-reference/functions/generate-metadata#metadatabase
+1. put opengraph-image.png under /app, not /public
+2. create opengraph-image.alt.txt, write something about your site
+3. add in /app/layout.tsx or /app/(root)/(home)/layout.tsx, the latter will override first.
+
+```
+export const metadata: Metadata = {
+  ...
+  metadataBase: new URL(process.env.SITE_URL!),
+  openGraph: {
+    images: "/opengraph-image.png",
+  },
+```
+
+Without `metadataBase`, metadataBase is automatically populated with a default value, which would fall back to http://localhost:3000.
+That's why it did not work before.
+
+> See https://nextjs.org/docs/app/api-reference/functions/generate-metadata#metadatabase
