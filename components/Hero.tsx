@@ -60,7 +60,7 @@ const Hero = () => {
         width={500}
         height={500}
         alt="vpn cloud"
-        src="/social-clouds-bg-transparent.png"
+        src="/clouds-with-router.png"
         className="hidden md:block object-cover "
       />
     </section>

@@ -19,6 +19,10 @@ export const metadata: Metadata = {
   icons: {
     icon: "/favicon.ico",
   },
+  metadataBase: new URL(process.env.SITE_URL!),
+  openGraph: {
+    images: "/opengraph-image.png",
+  },
 }
 
 export default function RootLayout({
