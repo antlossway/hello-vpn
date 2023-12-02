@@ -3,9 +3,9 @@ import Navbar from "@/components/Navbar"
 // import ThemeSwitch from "@/components/ThemeSwitch"
 
 export const metadata = {
-  title: "HelloVPN: outsourcing Site-to-Site VPN service",
+  title: "HelloVPN | Home",
   description:
-    "Outsourcing site-to-site VPN service for your business, no bullshit, it works.",
+    "Don't let VPN setup and maintenance slow you down. We are here to handle the heavy lifting for you.",
   // icons: {
   //   icon: "/favicon.ico",
   // }
