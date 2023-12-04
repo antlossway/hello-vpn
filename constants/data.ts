@@ -36,7 +36,8 @@ export const services = [
     icon: "/icons/icon-configure.svg",
     title: "Configuration",
     description:
-      "We configure Site-to-Site VPN tunnels between your network and your peers",
+      "We configure Site-to-Site VPN tunnels between your network and your peers.",
+    // DMVPN, BGP, EIGRP,GRE, SIGTRAN.
   },
   {
     icon: "/icons/icon-monitor.svg",

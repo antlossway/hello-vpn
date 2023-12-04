@@ -17,10 +17,10 @@ const ContactPage = () => {
       <div className="container mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-10">
           {/* leftside title and info */}
-          <div className="w-full px-4 mb-10 lg:mb-0">
-            <div className="max-w-[570px] mt-6 h-full flex flex-col justify-between">
+          <div className="order-2 lg:order-1 w-full px-4 mb-10 lg:mb-0">
+            <div className=" max-w-[570px] h-full flex flex-col justify-between">
               {/* email icon and email */}
-              <div className="p-4 mt-4 mb-6 flex items-start gap-4">
+              <div className=" p-4 mb-10 flex items-start gap-4">
                 <figure className="p-3.5 bg-primary-100 rounded-full grid place-content-center place-items-center">
                   <Image
                     src="/icons/icon-mail.svg"
@@ -40,7 +40,7 @@ const ContactPage = () => {
               </div>
 
               {/* team */}
-              <div className="space-y-6 mb-[28px]">
+              <div className="space-y-6 ">
                 {team.map((member) => (
                   <TeamCard
                     key={member.name}
@@ -55,7 +55,7 @@ const ContactPage = () => {
           </div>
 
           {/* right side contact form */}
-          <div className="w-full px-4">
+          <div className="order-1 w-full px-4">
             <div className="bg-white dark:bg-darkmode-800 relative rounded-lg p-8 sm:p-12 shadow-lg">
               <ContactForm />
 

@@ -9,7 +9,7 @@ type Props = {
 }
 const TeamCard = ({ name, avatar, title, description }: Props) => {
   return (
-    <div className=" px-4 py-2 w-full rounded-md shadow-md shadow-primary-100/30 dark:shadow-none flex items-center gap-2 even:flex-row-reverse even:text-right ">
+    <div className=" px-4 py-2 w-full rounded-md shadow-sm shadow-primary-100/30 dark:shadow-none flex items-center gap-2 even:flex-row-reverse even:text-right ">
       <Image
         src={avatar}
         alt={`image of ${name}`}
