@@ -1,11 +1,13 @@
 /* eslint-disable react/no-unescaped-entities */
 
 // import ThemeSwitch from "@/components/ThemeSwitch"
+import TeamCard from "@/components/cards/TeamCard"
 import CornerShape from "@/components/decoration/CornerShape"
 import DottedLeft from "@/components/decoration/DottedLeft"
 import DottedRight from "@/components/decoration/DottedRight"
 import ContactForm from "@/components/forms/ContactForm"
 import SiteLogo from "@/components/shared/SiteLogo"
+import { team } from "@/constants/data"
 import Image from "next/image"
 import React from "react"
 
@@ -13,12 +15,12 @@ const ContactPage = () => {
   return (
     <section className=" py-20 overflow-hidden relative">
       <div className="container mx-auto px-4">
-        <div className="grid lg:grid-cols-2 gap-4">
+        <div className="grid lg:grid-cols-2 gap-10">
           {/* leftside title and info */}
-          <div className="w-full px-4">
-            <div className="max-w-[570px] mt-6">
-              {/* <SiteLogo /> */}
-              <div className="mt-4 flex items-start gap-4">
+          <div className="w-full px-4 mb-10 lg:mb-0">
+            <div className="max-w-[570px] mt-6 h-full flex flex-col justify-between">
+              {/* email icon and email */}
+              <div className="p-4 mt-4 mb-6 flex items-start gap-4">
                 <figure className="p-3.5 bg-primary-100 rounded-full grid place-content-center place-items-center">
                   <Image
                     src="/icons/icon-mail.svg"
@@ -28,13 +30,26 @@ const ContactPage = () => {
                     className="block icon-blue object-contain "
                   />
                 </figure>
-                <div>
+                <div className="">
                   <p className="text-lg font-semibold">Email Us</p>
                   <p className="text-base text-gray-500 leading-relaxed">
-                    Our team is here to help you.
+                    Hello! You will hear back from us soon.
                   </p>
                   <span className="text-primary-500">info@hello-vpn.com</span>
                 </div>
+              </div>
+
+              {/* team */}
+              <div className="space-y-6 mb-[28px]">
+                {team.map((member) => (
+                  <TeamCard
+                    key={member.name}
+                    name={member.name}
+                    title={member.title}
+                    avatar={member.avatar}
+                    description={member.description}
+                  />
+                ))}
               </div>
             </div>
           </div>

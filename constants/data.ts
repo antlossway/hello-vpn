@@ -30,26 +30,26 @@ export const services = [
     icon: "/icons/icon-setup.svg",
     title: "Setup",
     description:
-      "If you don't yet have a VPN infrastructure, we can help you to setup a suitable solution for your use case",
+      "You don't have the infrastructure, we'll help you to build a suitable solution.",
   },
   {
     icon: "/icons/icon-configure.svg",
     title: "Configuration",
     description:
-      "Configure Site-to-Site VPN tunnels between your network and your peers",
+      "We configure Site-to-Site VPN tunnels between your network and your peers",
   },
   {
     icon: "/icons/icon-monitor.svg",
     title: "Monitoring",
     description:
-      "Mornitor the health of the VPN servers and the status of the VPN tunnels",
+      "We monitor the health of your VPNs and take actions if any problem occurs. We contact your peers, check network and configuration with them and make proper adjustments.",
   },
 
   {
     icon: "/icons/icon-backup.svg",
     title: "Backup",
     description:
-      "Backup all configurations to ensure seamless recovery in case of unforseen disasters",
+      "We backup all your configurations to ensure seamless recovery in case of disasters",
   },
 ]
 
@@ -66,7 +66,7 @@ export const whyus = [
     icon: "/icons/library-big.svg",
     title: "Specialized Expertise",
     description:
-      "During the 15+ years of hands-on experience in IT field, we have established many site-to-site VPN tunnels with different companies, including telecom giants in the world. You will have a peace of mind that your B2B VPN operations are handled by people who knows their jobs.",
+      "During the 15+ years of experience in IT field, we have established many site-to-site VPN tunnels with different companies, including telecom giants, financial institutions and service providers. You will have a peace of mind that your B2B VPN operations are handled by people who knows their jobs.",
   },
   {
     image: "/dartboard-red.png",
@@ -88,7 +88,7 @@ export const PricingData = [
       "Up to 10 VPN (50 EUR per VPN above)",
       "Realtime Monitoring of all VPN",
       "Backup of VPN configuration",
-      "Email support (response within 24 hours)",
+      "Email support (response within 12 hours)",
     ],
     active: true,
   },
@@ -115,3 +115,23 @@ export const PricingData = [
     active: false,
   },
 ]
+
+export const team = [
+  {
+    avatar: "/icons/icon-quinn.png",
+    name: "Quinn Xie",
+    title: "Former Head of Operation in Ameex Mobile",
+    description:
+      "Quinn has established many site-to-site VPN tunnels with different companies.",
+  },
+  {
+    avatar: "/icons/icon-stephane.png",
+    name: "Stephane Tougard",
+    title: "Former CTO in TransferTo (now DT One)",
+    description: "Stephane has 20+ years in the field of IT and Telecom.",
+  },
+]
+
+export const heroText =
+  // "Site-to-Site VPN is the common solution to secure the connection between two sites. However, it can be a challenging task due to various requirements."
+  "Site-to-Site VPN is the common solution to secure the connection between two sites. However, it's a challenging task if you don't have a dedicated personnel to handle it or your peer has unusual VPN requirements. We have 15 plus years of experience of dealing those challenges."
