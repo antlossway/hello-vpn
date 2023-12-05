@@ -5,6 +5,7 @@ import ThemeSwitch from "@/components/ThemeSwitch"
 import Navbar from "@/components/Navbar"
 import Footer from "@/components/Footer"
 import { ThemeProvider } from "@/context/ThemeProvider"
+import Script from "next/script"
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" })
 const josefinSans = Josefin_Sans({
@@ -39,6 +40,11 @@ export default function RootLayout({
         {/* ThemeSwitch has to be at the bottom */}
         {/* <ThemeSwitch /> */}
       </body>
+      <Script
+        async
+        src="https://umami-analytics-tawny.vercel.app/script.js"
+        data-website-id="fecd0ddb-b5b1-4916-81b0-f1880ff84813"
+      />
     </html>
   )
 }
