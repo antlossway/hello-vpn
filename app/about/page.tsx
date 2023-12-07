@@ -16,8 +16,8 @@ const About = async () => {
 
         {parseHTML(post.content)}
       </article>
-      <div className=" mt-10 mx-auto p-4 grid place-items-center  ">
-        <div className=" p-4 sm:px-10 flex flex-wrap flex-col items-center sm:flex-row  gap-4 border-t border-gray-200 dark:border-gray-200/20">
+      <div className=" mt-6 mx-auto p-4 grid place-items-center  ">
+        <div className=" px-4 py-8 sm:px-10 flex flex-wrap flex-col items-center sm:flex-row  gap-4 border-t border-gray-200 dark:border-gray-200/20">
           {team.map((member) => (
             <TeamCard
               key={member.name}
