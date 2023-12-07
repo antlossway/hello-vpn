@@ -135,4 +135,4 @@ export const team = [
 
 export const heroText =
   // "Site-to-Site VPN is the common solution to secure the connection between two sites. However, it can be a challenging task due to various requirements."
-  "Site-to-Site VPN is the common solution to secure the connection between two sites. However, it's a challenging task if you don't have a dedicated personnel to handle it or your peer has unusual VPN requirements. We have 15 plus years of experience of dealing those challenges."
+  "Site-to-Site IPSec VPN is the common solution to secure the connection between two sites. However, it's a challenging task if you don't have a dedicated personnel to handle it or your peer has unusual VPN requirements. We have 15 plus years of experience of dealing those challenges."

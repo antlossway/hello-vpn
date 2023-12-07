@@ -32,6 +32,8 @@ const Hero = () => {
             <ButtonCTA
               link="/#pricing"
               text="Get Started Today"
+              btnId="btn-hero-cta"
+              dataUmamiEvent="Hero CTA"
               otherClasses="w-fit primary-gradient text-white focus:ring-white"
             />
           </div>

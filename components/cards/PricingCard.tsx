@@ -73,12 +73,16 @@ const PricingCard = ({ title, price, bill, features, active }: Props) => {
             link="/contact"
             text="Get Started"
             otherClasses="primary-gradient text-white focus:ring-white"
+            btnId={`btn-pricing-cta-${title}`}
+            dataUmamiEvent={`Pricing CTA ${title}`}
           />
         ) : (
           <ButtonCTA
             link="/contact"
             text="Get Started"
             otherClasses="border border-primary-500 dark:border-accent-600 bg-white dark:bg-white/80 text-primary-500 dark:text-accent-600 hover:ring-1 hover:ring-indigo-600 active:text-indigo-500 "
+            btnId={`btn-pricing-cta-${title}`}
+            dataUmamiEvent={`Pricing CTA ${title}`}
           />
         )}
       </div>
