@@ -4,17 +4,26 @@ import React from "react"
 type Props = {
   name: string
   avatar: string
+  imgSize?: number
   description: string
   title: string
+  otherClasses?: string
 }
-const TeamCard = ({ name, avatar, title, description }: Props) => {
+const TeamCard = ({
+  name,
+  avatar,
+  imgSize = 80,
+  title,
+  description,
+  otherClasses,
+}: Props) => {
   return (
-    <div className=" px-4 py-2 w-full rounded-md shadow-sm shadow-primary-100/30 dark:shadow-none flex items-center gap-2 even:flex-row-reverse even:text-right ">
+    <div className={`px-4 py-2 rounded-md ${otherClasses}`}>
       <Image
         src={avatar}
         alt={`image of ${name}`}
-        width={80}
-        height={80}
+        width={imgSize}
+        height={imgSize}
         className={`rounded-full object-cover flex-shrink-0`}
       />
 

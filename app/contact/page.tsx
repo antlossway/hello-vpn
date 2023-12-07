@@ -40,14 +40,17 @@ const ContactPage = () => {
               </div>
 
               {/* team */}
-              <div className="space-y-6 ">
+              <div className=" space-y-6  ">
                 {team.map((member) => (
                   <TeamCard
                     key={member.name}
                     name={member.name}
                     title={member.title}
                     avatar={member.avatar}
+                    imgSize={60}
                     description={member.description}
+                    otherClasses="flex items-start gap-2 even:flex-row-reverse even:text-right"
+                    //  shadow-sm shadow-primary-100/30 dark:shadow-none
                   />
                 ))}
               </div>
