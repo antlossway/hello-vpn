@@ -3,7 +3,7 @@ import Navbar from "@/components/Navbar"
 // import ThemeSwitch from "@/components/ThemeSwitch"
 
 export const metadata = {
-  title: "HelloVPN | Contact",
+  title: "Contact",
   description: "Contact info@hello-vpn.com",
 }
 

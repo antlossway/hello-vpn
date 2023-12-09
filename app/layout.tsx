@@ -12,18 +12,33 @@ const josefinSans = Josefin_Sans({
   subsets: ["latin"],
   variable: "--font-josefin",
 })
-
+// favicon.ico and opengraph-image.png are in /app, not in /public
 export const metadata: Metadata = {
-  title: "HelloVPN",
+  title: {
+    template: "%s | HelloVPN",
+    default: "HelloVPN",
+  },
   description:
     "Outsourcing site-to-site VPN service for your business, no bullshit, it works.",
+  metadataBase: new URL(process.env.SITE_URL!),
   icons: {
     icon: "/favicon.ico",
   },
-  metadataBase: new URL(process.env.SITE_URL!),
   openGraph: {
     images: "/opengraph-image.png",
   },
+  keywords: [
+    "VPN",
+    "IPSec",
+    "Cisco",
+    "Juniper",
+    "BGP",
+    "GRE",
+    "DMVPN",
+    "site-to-site",
+    "site to site",
+    "outsourcing",
+  ],
 }
 
 export default function RootLayout({
