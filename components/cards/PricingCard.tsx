@@ -11,7 +11,7 @@ const FeatureItem = ({ children }: { children: string }) => {
         viewBox="0 0 24 24"
         strokeWidth="1.5"
         stroke="currentColor"
-        className="h-5 w-5 text-primary-500"
+        className="shrink-0 h-5 w-5 text-primary-500"
       >
         <path
           strokeLinecap="round"
@@ -31,8 +31,16 @@ type Props = {
   bill: string // per month | per day | per project
   features: string[]
   active?: boolean
+  description?: string
 }
-const PricingCard = ({ title, price, bill, features, active }: Props) => {
+const PricingCard = ({
+  title,
+  price,
+  bill,
+  features,
+  active,
+  description,
+}: Props) => {
   return (
     <div
       className={`p-6 sm:px-8 lg:p-12 rounded-2xl shadow-sm border ${
@@ -48,6 +56,9 @@ const PricingCard = ({ title, price, bill, features, active }: Props) => {
             {title}
             <span className="sr-only">Plan</span>
           </h2>
+          {description && (
+            <span className="text-sm color-paragraph">{description}</span>
+          )}
 
           <p className="mt-2 sm:mt-4">
             <strong className="text-3xl font-bold color-h2 sm:text-4xl">

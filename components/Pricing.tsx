@@ -18,6 +18,7 @@ const Pricing = () => {
             bill={plan.bill}
             features={plan.features}
             active={plan.active}
+            description={plan.description}
           />
         ))}
       </div>
