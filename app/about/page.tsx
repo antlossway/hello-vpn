@@ -10,12 +10,14 @@ const About = async () => {
   const post = await getPage("about-us")
 
   return (
-    <div className=" min-h-screen hero-bg-color py-10">
+    // calculate height to avoid useless vertical scrolling: height header 6rem (12rem when xl screen), footer 9rem
+    <div className=" min-h-[calc(100vh-6rem-9rem)] xl:min-h-[calc(100vh-12rem-9rem)] hero-bg-color py-10">
       <article className=" p-4 mx-auto prose prose-base md:prose-lg prose-slate dark:prose-invert prose-a:text-blue-500 prose-a:no-underline hover:prose-a:underline">
         <h1>{post.title}</h1>
 
         {parseHTML(post.content)}
       </article>
+      {/* Team photo */}
       <div className=" mt-6 mx-auto p-4 grid place-items-center  ">
         <div className=" px-4 py-8 sm:px-10 flex flex-wrap flex-col items-center sm:flex-row  gap-4 border-t border-gray-200 dark:border-gray-200/20">
           {team.map((member) => (
@@ -30,7 +32,6 @@ const About = async () => {
           ))}
         </div>
       </div>
-      {/* team */}
     </div>
   )
 }

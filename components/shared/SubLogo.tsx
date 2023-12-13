@@ -2,10 +2,11 @@ import Image from "next/image"
 import Link from "next/link"
 import React from "react"
 
-const SiteLogo = () => {
+const SubLogo = () => {
   return (
-    <Link href="/">
-      <figure className=" relative hover:opacity-50 transition w-[150px] h-[45px] xl:w-[250px] xl:h-[75px] ">
+    <Link href="https://ameex-mobile.com" target="_blank">
+      {/* logo orig size 223x81 */}
+      <figure className=" relative hover:opacity-50 transition w-[100px] h-[36px] xl:w-[150px] xl:h-[54px] ">
         {/* <Image
           src="/logo/logo_lightmode.svg"
           fill={true}
@@ -19,12 +20,9 @@ const SiteLogo = () => {
           className="hidden dark:block object-contain"
         /> */}
         <Image
-          // src="/logo/logo_darkmode.svg"
-          src="/logo/logo-puffin-white.png"
-          // width={150}
-          // height={100}
+          src="/logo/logo-powered-by-v2.png"
           fill={true}
-          alt="logo"
+          alt="logo ameex mobile"
           className=" object-contain"
         />
       </figure>
@@ -32,4 +30,4 @@ const SiteLogo = () => {
   )
 }
 
-export default SiteLogo
+export default SubLogo

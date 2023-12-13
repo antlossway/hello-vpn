@@ -128,7 +128,8 @@ export const team = [
   {
     avatar: "/icons/icon-stephane.png",
     name: "Stephane Tougard",
-    title: "Former CTO in TransferTo (now DT One)",
+    // title: "Former CTO in TransferTo (now DT One)",
+    title: "Senior Consultant in Ameex Mobile",
     description: "Stephane has 20+ years in the field of IT and Telecom.",
   },
 ]

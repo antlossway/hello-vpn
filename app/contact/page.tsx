@@ -33,14 +33,14 @@ const ContactPage = () => {
                 <div className="">
                   <p className="text-lg font-semibold">Email Us</p>
                   <p className="text-base text-gray-500 leading-relaxed">
-                    Hello! You will hear back from us soon.
+                    Hello! We will come back to you soon.
                   </p>
                   <span className="text-primary-500">info@hello-vpn.com</span>
                 </div>
               </div>
 
               {/* team */}
-              <div className=" space-y-6  ">
+              {/* <div className=" space-y-6  ">
                 {team.map((member) => (
                   <TeamCard
                     key={member.name}
@@ -53,7 +53,7 @@ const ContactPage = () => {
                     //  shadow-sm shadow-primary-100/30 dark:shadow-none
                   />
                 ))}
-              </div>
+              </div> */}
             </div>
           </div>
 

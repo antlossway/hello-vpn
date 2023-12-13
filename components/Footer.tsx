@@ -12,7 +12,7 @@ const Footer = () => {
 
   return (
     <footer
-      className="footer-gradient
+      className="h-36 footer-gradient
     rounded-tl-[120px] px-12 "
     >
       <div className=" relative mx-auto max-w-screen-xl p-4 py-8 sm:px-6 lg:px-8 ">

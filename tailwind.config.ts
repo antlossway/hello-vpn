@@ -48,6 +48,9 @@ const config: Config = {
         inter: ["var(--font-inter)"],
         josefin: ["var(--font-josefin)"],
       },
+      transitionProperty: {
+        height: "height",
+      },
     },
   },
   plugins: [require("@tailwindcss/typography")],
