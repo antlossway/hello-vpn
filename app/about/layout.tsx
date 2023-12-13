@@ -16,7 +16,9 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       </div>
       {/* </div> */}
       {children}
-      <Footer />
+      <div className="hero-bg-color">
+        <Footer />
+      </div>
       {/* <ThemeSwitch /> */}
     </>
   )

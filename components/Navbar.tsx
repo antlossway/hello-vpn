@@ -20,14 +20,14 @@ const Navbar = ({ withThemeSwitch = true }: Props) => {
         className=" z-200 h-24 xl:h-48 transition-height px-8 py-6 flex justify-between items-center footer-gradient rounded-bl-[80px] sm:px-12 lg:px-16 "
       >
         {/* icon */}
-        <div className="flex gap-4">
-          <div className="self-center">
-            <SiteLogo />
-          </div>
+        {/* <div className="flex gap-4">
+          <div className="self-center"> */}
+        <SiteLogo />
+        {/* </div>
           <div className=" hidden lg:block lg:self-start">
             <SubLogo />
           </div>
-        </div>
+        </div> */}
 
         <div className="flex items-center gap-10">
           {/* theme switch */}

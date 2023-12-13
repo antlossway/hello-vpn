@@ -6,19 +6,20 @@ import Link from "next/link"
 import Image from "next/image"
 import SiteLogo from "./shared/SiteLogo"
 import IconCircle from "./shared/IconCircle"
+import SubLogo from "./shared/SubLogo"
 
 const Footer = () => {
   const currentYear = getCurrentYear()
 
   return (
     <footer
-      className="h-36 footer-gradient
-    rounded-tl-[120px] px-12 "
+      className=" footer-gradient
+    rounded-tl-[120px] px-12"
     >
       <div className=" relative mx-auto max-w-screen-xl p-4 py-8 sm:px-6 lg:px-8 ">
         <BackToTop />
 
-        <div className=" flex flex-col items-center gap-4 md:flex-row md:items-end md:justify-between">
+        <div className="flex flex-col items-stretch gap-4 md:flex-row md:items-end md:justify-between">
           {/* logo with contact info */}
           <div className="flex flex-col gap-2 items-center">
             {/* site logo */}
@@ -35,10 +36,11 @@ const Footer = () => {
             </div>
           </div>
 
-          <div className="flex flex-col gap-1">
+          <div className="h-full flex flex-col max-md:items-center ">
+            <SubLogo />
             <Link
               href="/about"
-              className="text-sm text-center md:text-left text-color-link "
+              className="mt-4 text-sm text-center md:text-left text-color-link "
             >
               No Bullshit
             </Link>
