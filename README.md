@@ -65,3 +65,37 @@ Without `metadataBase`, metadataBase is automatically populated with a default v
 That's why it did not work before.
 
 > See https://nextjs.org/docs/app/api-reference/functions/generate-metadata#metadatabase
+
+## Headless wordpress
+
+### styling trick
+
+Example: `details`
+
+```
+<!-- wp:details -->
+<details class="wp-block-details">
+	<summary><?php esc_html_e( 'Question 1?', 'themeslug' ); ?></summary>
+	<!-- wp:paragraph {"placeholder":"<?php esc_attr_e( 'Add an answer to the question.', 'themeslug' ); ?>"} -->
+	<p></p>
+	<!-- /wp:paragraph -->
+</details>
+<!-- /wp:details -->
+```
+
+To style `summary`, we can add in global.css
+
+```
+/* Base `summary` element styling. */
+.wp-block-details summary {
+  transition: all 0.5s ease-in-out;
+  box-sizing: border-box;
+  padding: 1rem;
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+```
+
+## Reference
+
+[https://developer.wordpress.org/news/2023/12/01/styles-patterns-and-more-with-the-details-block/](https://developer.wordpress.org/news/2023/12/01/styles-patterns-and-more-with-the-details-block/)

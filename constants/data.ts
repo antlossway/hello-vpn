@@ -86,9 +86,11 @@ export const PricingData = [
     bill: "per month",
     // description: "For small business",
     features: [
-      "Up to 10 VPN (50 EUR per VPN above)",
-      "Realtime Monitoring of all VPN",
+      "Minimum 1 year subscription",
+      "Up to 10 VPN (50 EUR per month per VPN above)",
+      "Configuration of your VPNs",
       "Backup of VPN configuration",
+      "Real-time Monitoring of all VPN",
       "Email support (response within 12 hours)",
     ],
     active: true,
