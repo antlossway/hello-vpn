@@ -137,13 +137,13 @@ export const team = [
     title: "Senior Consultant",
     description: "Stephane has 20+ years in the field of IT and Telecom.",
   },
-  // {
-  //   avatar: "/icons/icon-steven.png",
-  //   name: "Steven Goh",
-  //   title: "Head of Operation",
-  //   description:
-  //     "Steven is a System Engineer with 15+ years of extensive experience in delivering exceptional solution.",
-  // },
+  {
+    avatar: "/icons/icon-steven.png",
+    name: "Steven Goh",
+    title: "Head of Operation",
+    description:
+      "Steven is a System Engineer with 15+ years of extensive experience in delivering exceptional solution.",
+  },
 ]
 
 export const heroText =
