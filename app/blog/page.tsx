@@ -3,11 +3,22 @@ import { getAllPosts, getCategories } from "@/lib/wp-rest"
 import PostCard from "@/components/cards/PostCard"
 import Link from "next/link"
 import Image from "next/image"
+import PostListItem from "@/components/blog/PostListItem"
+import SiteLogo from "@/components/shared/SiteLogo"
+import ThemeSwitch from "@/components/ThemeSwitch"
+import TagFilter from "@/components/blog/TagFilter"
 
 export const revalidate = parseInt(process.env.REVALIDATE_INTERVAL || "60")
 
-const BlogPage = async () => {
-  const { posts, totalNumOfPost, categoryArray: tags } = await getAllPosts()
+type Props = {
+  searchParams: {
+    tag?: string
+  }
+}
+const BlogPage = async ({ searchParams }: Props) => {
+  const { tag } = searchParams
+
+  const { posts, totalNumOfPost, categoryArray, tagArray } = await getAllPosts()
 
   if (!posts) {
     return <p className="mt-10 text-center">Sorry, no posts available</p>
@@ -15,47 +26,45 @@ const BlogPage = async () => {
 
   //   console.log(posts)
 
+  // if there is a tag in the url, filter the posts
+  let filteredPosts = posts
+  if (tag) {
+    filteredPosts = posts.filter((post: any) => post.tags.includes(tag))
+  }
+
   return (
-    <>
-      <div className="absolute top-0 left-0 right-0 w-full h-[200px]">
-        <Image
-          src="/blog-background-datacenter.jpeg"
-          alt="hero image"
-          //   layout="responsive"
-          fill
-          className="object-cover -z-10"
-        />
+    <main>
+      {/* background image */}
+      <div className="w-full h-[200px] bg-[url('/blog-background-datacenter.jpeg')] grid place-items-center p-8 px-10">
+        <div className=" mx-auto w-full max-w-5xl p-4 flex justify-between items-center bg-dark-700/50 shadow-lg ">
+          <SiteLogo />
+          <div className="flex items-center gap-8 ">
+            <ThemeSwitch />
+            <h1 className="text-center text-3xl text-white sm:text-4xl font-bold">
+              Articles <span className="text-lg">(total {totalNumOfPost})</span>
+            </h1>
+          </div>
+        </div>
       </div>
-      <main className="container py-10">
-        <div className="wrapper p-6 grid place-items-center gap-4 ">
-          <h1 className="text-center text-3xl text-white sm:text-4xl font-bold">
-            Articles <span className="text-lg">(total {totalNumOfPost})</span>
-          </h1>
 
-          {/* categories only shown in bigger screen */}
-          {/* <ul className="hidden place-self-start sm:flex sm:gap-4 sm:justify-between">
-          {tags.map((tag) => (
-            <li key={tag.id}>
-              <Link href={`/tags/${tag.slug}`} className="hover:underline">
-                {tag.slug}
-              </Link>
-            </li>
-          ))}
-        </ul> */}
+      {/* TODO: search bar */}
 
-          {/* grid of article card */}
-          <ul className="m-10 mx-auto grid gap-4 md:grid-cols-2 lg:grid-cols-3 sm:gap-10">
-            {posts.map((post: any) => (
-              <li key={post.slug} className="">
-                <PostCard post={post} />
-              </li>
+      <section className=" mx-auto container p-4">
+        <div className="max-w-7xl p-6 grid place-items-center  ">
+          {/* tags */}
+          <TagFilter tagArray={tagArray} />
+
+          {/* list of articles */}
+          <ul className="w-full list-none ">
+            {filteredPosts.map((post: any) => (
+              <PostListItem key={post.slug} post={post} />
             ))}
           </ul>
-
+          {/* TODO: Pagination */}
           {/* <Pagination paginationData={meta.pagination} /> */}
         </div>
-      </main>
-    </>
+      </section>
+    </main>
   )
 }
 

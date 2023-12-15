@@ -3,6 +3,7 @@ import BackToList from "@/components/shared/BackToList"
 import { getCategories, getSinglePost } from "@/lib/wp-rest"
 import parseHTML from "html-react-parser"
 import Link from "next/link"
+import ThemeSwitch from "@/components/ThemeSwitch"
 
 export const revalidate = parseInt(process.env.REVALIDATE_INTERVAL || "60")
 
@@ -40,20 +41,24 @@ export default async function BlogPost({ params }: any) {
   const post = await getSinglePost(slug)
   if (!post) return <p>post does not exists</p>
 
+  console.log("debug singlepost tags: ", post.tags)
+
   return (
-    <main className="container mx-auto py-10 border border-red-500">
+    <main className=" container mx-auto">
       <article
-        className="mx-auto p-4 prose prose-base md:prose-lg prose-slate
-      dark:bg-black/80 dark:prose-invert prose-a:text-blue-500 prose-a:no-underline hover:prose-a:underline"
+        className=" mx-auto p-6 sm:px-10 prose prose-base md:prose-lg prose-slate
+       dark:prose-invert prose-a:text-blue-500 prose-a:no-underline hover:prose-a:underline"
       >
         <h1 className="capitalize">{post.title}</h1>
-        <Link href={`/tags/${post.category}`}>
-          <span className="ml-5">#{post.category}</span>
-        </Link>
+        <div className="absolute top-2 right-2">
+          <ThemeSwitch />
+        </div>
 
         {parseHTML(post.content)}
       </article>
-      <BackToList />
+      <div className="p-6 sm:px-10">
+        <BackToList />
+      </div>
     </main>
   )
 }

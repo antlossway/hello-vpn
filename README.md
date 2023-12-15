@@ -96,6 +96,21 @@ To style `summary`, we can add in global.css
 }
 ```
 
+## How to add authentication to REST API
+
+install plugin **WordPress REST API Authentication by miniOrange,**
+
+select Basic Authentication, generate auth token
+
+```
+export const myAxios = axios.create({
+  baseURL: process.env.WP_API_URL,
+  headers: {
+    Authorization: `Basic ${process.env.WP_BASIC_AUTH}`,
+  },
+})
+```
+
 ## Reference
 
 [https://developer.wordpress.org/news/2023/12/01/styles-patterns-and-more-with-the-details-block/](https://developer.wordpress.org/news/2023/12/01/styles-patterns-and-more-with-the-details-block/)

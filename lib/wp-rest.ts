@@ -14,7 +14,8 @@ import qs from "qs"
 //search post by tags
 //https://13.212.76.243/wp-json/wp/v2/posts?tags=4
 
-const extractDataFromPosts = (posts: any, catMap: any) => {
+// get key fields from posts
+const extractDataFromPosts = (posts: any, catMap: any, tagMap?: any) => {
   const postsData = posts.map((post: any) => {
     return {
       slug: post?.slug,
@@ -23,6 +24,7 @@ const extractDataFromPosts = (posts: any, catMap: any) => {
       excerpt: post?.excerpt.rendered,
       featuredImgUrl: post?.acf.featured_image_url,
       category: catMap.get(parseInt(post?.categories[0])),
+      tags: post?.tags.map((tagId: number) => tagMap.get(tagId)), // array of tag names
     }
   })
 
@@ -32,16 +34,23 @@ const extractDataFromPosts = (posts: any, catMap: any) => {
 export async function getAllPosts() {
   // const res = await myAxios.get("/posts?_embed");
   // const resCat: Map<number, string> = await getCategories(); // Map id => name
-  const { categoryMap, categoryMapNameToId } = await getCategories() // Map id => name
+
+  const { categoryMap, categoryMapNameToId } = await getCategories() // (hash like) Map id => name
+  const { tagMap, tagMapNameToId } = await getTags() // (hash like) Map id => name
 
   const categoryArray = Array.from(categoryMap, ([id, slug]) => ({
     id,
     slug,
   }))
 
+  const tagArray = Array.from(tagMap, ([id, slug]) => ({
+    id,
+    slug,
+  }))
+
   const res = await myAxios.get("/posts?orderby=date&order=desc")
   const data = res.data
-  const posts = extractDataFromPosts(data, categoryMap)
+  const posts = extractDataFromPosts(data, categoryMap, tagMap)
 
   const totalNumOfPost = parseInt(res.headers["x-wp-total"])
   //   console.log({ totalNumOfPost }, { posts })
@@ -50,6 +59,7 @@ export async function getAllPosts() {
     posts: posts,
     totalNumOfPost,
     categoryArray,
+    tagArray, // all the tags, even no posts are using the tag
   }
   // console.log(result);
   return result
@@ -88,8 +98,27 @@ const getCategories = async () => {
 }
 export { getCategories }
 
+// getTags
+const getTags = async () => {
+  const res = await myAxios.get("/tags?_fields=id,slug")
+  const data = res.data //array of object
+  // console.log(data, Array.isArray(data));
+
+  const tagMap = new Map() // id to name
+  const tagMapNameToId = new Map() // name to id
+
+  data?.forEach((item: any) => {
+    tagMap.set(item.id, item.slug)
+    tagMapNameToId.set(item.slug, item.id)
+  })
+
+  return { tagMap, tagMapNameToId }
+}
+export { getTags }
+
 export async function getSinglePost(slug: string) {
   const { categoryMap, categoryMapNameToId } = await getCategories() // Map id => name
+  const { tagMap, tagMapNameToId } = await getTags() // Map id => name
 
   const query = qs.stringify(
     {
@@ -103,15 +132,18 @@ export async function getSinglePost(slug: string) {
   const res = await myAxios.get(`/posts?${query}`)
   const post = res.data[0]
   // console.log(post);
-
-  return {
+  const postData = {
     slug: post?.slug,
     title: post?.title.rendered,
     content: post?.content.rendered,
     excerpt: post?.excerpt.rendered,
     // featuredImgUrl: post?.acf.featured_image_url,
     category: categoryMap.get(parseInt(post?.categories[0])),
+    tags: post?.tags.map((tagId: number) => tagMap.get(tagId)),
   }
+
+  console.log(postData)
+  return postData
 }
 
 export async function getRecentPosts(num: number) {

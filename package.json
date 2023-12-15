@@ -17,6 +17,7 @@
     "next-sitemap": "^4.2.3",
     "nodemailer": "^6.9.7",
     "qs": "^6.11.2",
+    "query-string": "^8.1.0",
     "react": "^18",
     "react-dom": "^18"
   },
