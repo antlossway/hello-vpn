@@ -6,10 +6,10 @@ import { redirect, useRouter, useSearchParams } from "next/navigation"
 import React, { useState } from "react"
 
 type Props = {
-  tagArray: { id: any; slug: any }[]
+  tags: string[]
 }
 
-const TagFilter = ({ tagArray }: Props) => {
+const TagFilter = ({ tags }: Props) => {
   const router = useRouter()
   const searchParams = useSearchParams()
   const lastFilter = searchParams.get("tag")
@@ -44,18 +44,18 @@ const TagFilter = ({ tagArray }: Props) => {
 
   return (
     <ul className="mb-6 sm:place-self-start flex items-center flex-wrap gap-4 sm:justify-between">
-      {tagArray.map((tag) => (
-        <li key={tag.id} onClick={() => toggleFilter(tag.slug)}>
+      {tags.map((tag) => (
+        <li key={tag} onClick={() => toggleFilter(tag)}>
           <Link
-            href={`/blog?tag=${tag.slug}`}
+            href={`/blog?tag=${tag}`}
             className={`py-2 px-3 grid place-items-center rounded-md
             ${
-              filter === tag.slug
+              filter === tag
                 ? " bg-accent-400/60 hover:bg-accent-400 dark:bg-accent-800 dark:hover:bg-accent-800/50"
                 : " bg-primary-100/60 hover:bg-primary-100 dark:bg-darkmode-300 dark:hover:bg-darkmode-300/50"
             } `}
           >
-            {tag.slug}
+            <span className="uppercase text-xs">{tag}</span>
           </Link>
         </li>
       ))}

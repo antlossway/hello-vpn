@@ -41,7 +41,7 @@ export default async function BlogPost({ params }: any) {
   const post = await getSinglePost(slug)
   if (!post) return <p>post does not exists</p>
 
-  console.log("debug singlepost tags: ", post.tags)
+  // console.log("debug singlepost tags: ", post.tags)
 
   return (
     <main className=" container mx-auto">

@@ -18,13 +18,16 @@ type Props = {
 const BlogPage = async ({ searchParams }: Props) => {
   const { tag } = searchParams
 
-  const { posts, totalNumOfPost, categoryArray, tagArray } = await getAllPosts()
+  const { posts, totalNumOfPost, tagMap, tagMapNameToId } = await getAllPosts()
 
   if (!posts) {
     return <p className="mt-10 text-center">Sorry, no posts available</p>
   }
 
   //   console.log(posts)
+  // get all tags from posts
+  const tagSet = new Set(posts.map((post: any) => post.tags).flat())
+  const tags = Array.from(tagSet)
 
   // if there is a tag in the url, filter the posts
   let filteredPosts = posts
@@ -52,7 +55,7 @@ const BlogPage = async ({ searchParams }: Props) => {
       <section className=" mx-auto container p-4">
         <div className="max-w-7xl p-6 grid place-items-center  ">
           {/* tags */}
-          <TagFilter tagArray={tagArray} />
+          <TagFilter tags={tags} />
 
           {/* list of articles */}
           <ul className="w-full list-none ">

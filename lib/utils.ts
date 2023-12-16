@@ -53,3 +53,9 @@ export const RemoveKeysFromQuery = ({
     { skipNull: true, skipEmptyString: true }
   )
 }
+
+export function formatDate(dateString: string) {
+  return new Intl.DateTimeFormat("en-US", { dateStyle: "long" }).format(
+    new Date(dateString)
+  )
+}
