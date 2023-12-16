@@ -37,15 +37,20 @@ const BlogPage = async ({ searchParams }: Props) => {
 
   return (
     <main>
-      {/* background image */}
-      <div className="w-full h-[200px] bg-[url('/blog-background-datacenter.jpeg')] grid place-items-center p-8 px-10">
-        <div className=" mx-auto w-full max-w-5xl p-4 flex justify-between items-center bg-dark-700/50 shadow-lg ">
-          <SiteLogo />
-          <div className="flex items-center gap-8 ">
-            <ThemeSwitch />
-            <h1 className="text-center text-3xl text-white sm:text-4xl font-bold">
-              Articles <span className="text-lg">(total {totalNumOfPost})</span>
-            </h1>
+      {/* header with background image */}
+      <div className="w-full h-[200px] bg-[url('/blog-background-datacenter.jpeg')]  ">
+        {/* overlay shadow */}
+        <div className="w-full h-[200px] bg-dark-700/50 p-8 px-10 grid place-items-center">
+          {/* header with logo and title */}
+          <div className=" mx-auto w-full max-w-5xl p-4 flex justify-between items-center  ">
+            <SiteLogo />
+            <div className="flex items-center gap-8 ">
+              <ThemeSwitch />
+              <h1 className="text-center text-3xl text-white sm:text-4xl font-bold">
+                Articles{" "}
+                <span className="text-lg">(total {totalNumOfPost})</span>
+              </h1>
+            </div>
           </div>
         </div>
       </div>

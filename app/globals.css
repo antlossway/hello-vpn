@@ -121,3 +121,9 @@ body {
 .wp-block-details summary:focus {
   background: #e2e8f0;
 } */
+.has-accent-3-color {
+  color: rgb(204, 70, 70);
+}
+.has-small-font-size {
+  font-size: 0.8rem;
+}
