@@ -15,14 +15,14 @@ const BlogHeader = ({ totalNumOfPost }: Props) => {
         <div className=" mx-auto w-full max-w-5xl p-4 flex justify-between items-center  ">
           <SiteLogo />
           <div className="flex items-center gap-8 ">
-            <h1 className="text-center text-3xl text-white sm:text-4xl font-bold">
+            <p className="hidden sm:block text-center text-3xl text-white sm:text-4xl font-bold">
               <Link href="/blog" className="hover:text-white/80">
                 Articles
                 {totalNumOfPost ? (
                   <span className="text-lg"> (total {totalNumOfPost})</span>
                 ) : null}
               </Link>
-            </h1>
+            </p>
             <ThemeSwitch />
           </div>
         </div>
