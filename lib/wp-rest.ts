@@ -21,22 +21,51 @@ type postType = {
   featuredImgUrl?: string
   tags: string[]
   date: string
+  content?: string
 }
 // get key fields from posts
-const extractDataFromPosts = (posts: any, tagMap?: any): postType[] => {
-  const postsData = posts.map((post: any) => {
+// const extractDataFromPosts = (posts: any, tagMap?: any): postType[] => {
+//   const postsData = posts.map((post: any) => {
+//     return {
+//       slug: post?.slug,
+//       title: post?.title.rendered,
+//       // content: post?.content.rendered,
+//       excerpt: post?.excerpt.rendered,
+//       featuredImgUrl: post?.acf.featured_image_url,
+//       tags: post?.tags.map((tagId: number) => tagMap.get(tagId)), // array of tag names
+//       date: formatDate(post?.date),
+//     }
+//   })
+
+//   return postsData
+// }
+
+const extractDataFromPost = (
+  post: any,
+  tagMap?: any,
+  includesContent: boolean = false
+): postType => {
+  if (includesContent) {
+    // getSinglePost
     return {
       slug: post?.slug,
       title: post?.title.rendered,
-      // content: post?.content.rendered,
+      content: post?.content.rendered,
       excerpt: post?.excerpt.rendered,
       featuredImgUrl: post?.acf.featured_image_url,
       tags: post?.tags.map((tagId: number) => tagMap.get(tagId)), // array of tag names
       date: formatDate(post?.date),
     }
-  })
+  }
 
-  return postsData
+  return {
+    slug: post?.slug,
+    title: post?.title.rendered,
+    excerpt: post?.excerpt.rendered,
+    featuredImgUrl: post?.acf.featured_image_url,
+    tags: post?.tags.map((tagId: number) => tagMap.get(tagId)), // array of tag names
+    date: formatDate(post?.date),
+  }
 }
 
 export async function getAllPosts() {
@@ -58,7 +87,7 @@ export async function getAllPosts() {
 
   const res = await myAxios.get("/posts?orderby=date&order=desc")
   const data = res.data
-  const posts = extractDataFromPosts(data, tagMap)
+  const posts = data.map((post: any) => extractDataFromPost(post, tagMap))
 
   const totalNumOfPost = parseInt(res.headers["x-wp-total"])
   //   console.log({ totalNumOfPost }, { posts })
@@ -125,7 +154,6 @@ export const getTags = async () => {
 // export { getTags }
 
 export async function getSinglePost(slug: string) {
-  const { categoryMap, categoryMapNameToId } = await getCategories() // Map id => name
   const { tagMap, tagMapNameToId } = await getTags() // Map id => name
 
   const query = qs.stringify(
@@ -140,17 +168,9 @@ export async function getSinglePost(slug: string) {
   const res = await myAxios.get(`/posts?${query}`)
   const post = res.data[0]
   // console.log(post);
-  const postData = {
-    slug: post?.slug,
-    title: post?.title.rendered,
-    content: post?.content.rendered,
-    excerpt: post?.excerpt.rendered,
-    // featuredImgUrl: post?.acf.featured_image_url,
-    category: categoryMap.get(parseInt(post?.categories[0])),
-    tags: post?.tags.map((tagId: number) => tagMap.get(tagId)),
-  }
+  const postData = extractDataFromPost(post, tagMap, true)
 
-  // console.log(postData)
+  // console.log("debug getSinglePost: ", postData)
   return postData
 }
 
@@ -164,39 +184,6 @@ export async function getRecentPosts(num: number) {
   } else {
     return posts.slice(0, num)
   }
-}
-
-export async function getPostsByCategory(category: string) {
-  // map category name to id
-  const { categoryMap, categoryMapNameToId } = await getCategories()
-
-  const query = qs.stringify(
-    {
-      categories: categoryMapNameToId.get(category),
-    },
-    {
-      encodeValuesOnly: true,
-    }
-  )
-
-  const res = await myAxios.get(
-    `/posts?${query}&_fields=id,slug,categories,title,excerpt,acf&orderby=date&order=desc`
-  )
-  const data = res.data
-
-  // console.log(`getPostsByCategory for ${category}:`, data);
-
-  const posts = extractDataFromPosts(data, categoryMap)
-
-  const totalNumOfPost = parseInt(res.headers["x-wp-total"])
-  // console.log(numOfPost);
-
-  const result = {
-    posts: posts,
-    totalNumOfPost,
-  }
-  // console.log(result);
-  return result
 }
 
 export async function getPage(slug: string) {

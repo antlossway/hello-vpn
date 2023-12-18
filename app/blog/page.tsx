@@ -1,12 +1,11 @@
 import React from "react"
-import { getAllPosts, getCategories } from "@/lib/wp-rest"
-import PostCard from "@/components/cards/PostCard"
-import Link from "next/link"
-import Image from "next/image"
+import { getAllPosts } from "@/lib/wp-rest"
 import PostListItem from "@/components/blog/PostListItem"
 import SiteLogo from "@/components/shared/SiteLogo"
 import ThemeSwitch from "@/components/ThemeSwitch"
 import TagFilter from "@/components/blog/TagFilter"
+import { Metadata } from "next"
+import BlogHeader from "@/components/blog/BlogHeader"
 
 export const revalidate = parseInt(process.env.REVALIDATE_INTERVAL || "60")
 
@@ -18,7 +17,7 @@ type Props = {
 const BlogPage = async ({ searchParams }: Props) => {
   const { tag } = searchParams
 
-  const { posts, totalNumOfPost, tagMap, tagMapNameToId } = await getAllPosts()
+  const { posts, totalNumOfPost } = await getAllPosts()
 
   if (!posts) {
     return <p className="mt-10 text-center">Sorry, no posts available</p>
@@ -37,30 +36,12 @@ const BlogPage = async ({ searchParams }: Props) => {
 
   return (
     <main>
-      {/* header with background image */}
-      <div className="w-full h-[200px] bg-[url('/blog-background-datacenter.jpeg')]  ">
-        {/* overlay shadow */}
-        <div className="w-full h-[200px] bg-dark-700/50 p-8 px-10 grid place-items-center">
-          {/* header with logo and title */}
-          <div className=" mx-auto w-full max-w-5xl p-4 flex justify-between items-center  ">
-            <SiteLogo />
-            <div className="flex items-center gap-8 ">
-              <ThemeSwitch />
-              <h1 className="text-center text-3xl text-white sm:text-4xl font-bold">
-                Articles{" "}
-                <span className="text-lg">(total {totalNumOfPost})</span>
-              </h1>
-            </div>
-          </div>
-        </div>
-      </div>
-
       {/* TODO: search bar */}
 
       <section className=" mx-auto container p-4">
         <div className="max-w-7xl p-6 grid place-items-center  ">
           {/* tags */}
-          <TagFilter tags={tags} />
+          <TagFilter tags={tags as string[]} />
 
           {/* list of articles */}
           <ul className="w-full list-none ">

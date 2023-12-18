@@ -3,10 +3,7 @@ export const navlist = [
     name: "About",
     path: "/about",
   },
-  // {
-  //   name: "Blog",
-  //   path: "/blog",
-  // },
+
   // {
   //   name: "Tool",
   //   path: "/tool",
@@ -18,6 +15,10 @@ export const navlist = [
   {
     name: "Pricing",
     path: "/#pricing",
+  },
+  {
+    name: "Blog",
+    path: "/blog",
   },
   {
     name: "Contact",
