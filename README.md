@@ -27,6 +27,8 @@ const DottedLeft = ({fill}:{fill:string}) => {
 
 ## generate sitemap
 
+### use next-sitemap
+
 ```
 npm install next-sitemap
 ```
@@ -41,6 +43,8 @@ module.exports = {
   generateIndexSitemap: false,
   // ...other options
 }
+
+npm run build
 
 ```
 

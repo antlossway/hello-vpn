@@ -1,36 +1,49 @@
+import { getAllPosts } from "@/lib/wp-rest"
 import { MetadataRoute } from "next"
+import { postType } from "./types"
 
-export default function sitemap(): MetadataRoute.Sitemap {
-  return [
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  const siteURL = process.env.SITE_URL || "http://localhost:3000"
+  const allPosts = await getAllPosts()
+
+  const home = {
+    url: siteURL,
+    lastModified: new Date().toString(),
+    priority: 1,
+  }
+  const siteLinks = [
     {
-      url: process.env.SITE_URL || "http://localhost:3000",
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 1,
-    },
-    {
-      url: `${process.env.SITE_URL || "http://localhost:3000"}/blog`,
-      lastModified: new Date(),
-      changeFrequency: "daily",
+      url: `${siteURL}/blog`,
+      lastModified: new Date().toString(),
       priority: 0.9,
     },
     {
-      url: `${process.env.SITE_URL || "http://localhost:3000"}/about`,
-      lastModified: new Date(),
-      changeFrequency: "weekly",
+      url: `${siteURL}/about`,
+      lastModified: new Date().toString(),
       priority: 0.7,
     },
     {
-      url: `${process.env.SITE_URL || "http://localhost:3000"}/faq`,
-      lastModified: new Date(),
-      changeFrequency: "weekly",
+      url: `${siteURL}/faq`,
+      lastModified: new Date().toString(),
       priority: 0.6,
     },
     {
-      url: `${process.env.SITE_URL || "http://localhost:3000"}/contact`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
+      url: `${siteURL}/contact`,
+      lastModified: new Date().toString(),
       priority: 0.5,
     },
   ]
+
+  if (!allPosts) return [home, ...siteLinks]
+
+  const postLinks = allPosts.posts?.map((post: postType) => ({
+    url: `${siteURL}/blog/${post.slug}`,
+    lastModified: post.modified,
+    priority: 0.7,
+  }))
+
+  // date of most recent post
+  home.lastModified = allPosts.posts[0].date
+
+  return [home, ...siteLinks, ...postLinks]
 }

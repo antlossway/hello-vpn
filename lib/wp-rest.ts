@@ -3,6 +3,7 @@ import { formatDate } from "@/lib/utils"
 
 import { myAxios } from "@/lib/myAxios"
 import qs from "qs"
+import { postType } from "@/app/types"
 // import { postType, postsType } from "../../data";
 
 // example query
@@ -14,15 +15,7 @@ import qs from "qs"
 
 //search post by tags
 //https://13.212.76.243/wp-json/wp/v2/posts?tags=4
-type postType = {
-  slug: string
-  title: string
-  excerpt: string
-  featuredImgUrl?: string
-  tags: string[]
-  date: string
-  content?: string
-}
+
 // get key fields from posts
 // const extractDataFromPosts = (posts: any, tagMap?: any): postType[] => {
 //   const postsData = posts.map((post: any) => {
@@ -55,6 +48,7 @@ const extractDataFromPost = (
       featuredImgUrl: post?.acf.featured_image_url,
       tags: post?.tags.map((tagId: number) => tagMap.get(tagId)), // array of tag names
       date: formatDate(post?.date),
+      modified: formatDate(post?.modified),
     }
   }
 
@@ -65,6 +59,7 @@ const extractDataFromPost = (
     featuredImgUrl: post?.acf.featured_image_url,
     tags: post?.tags.map((tagId: number) => tagMap.get(tagId)), // array of tag names
     date: formatDate(post?.date),
+    modified: formatDate(post?.modified),
   }
 }
 

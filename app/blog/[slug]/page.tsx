@@ -21,7 +21,10 @@ export async function generateMetadata({ params }: any) {
     title: post.title,
     date: post.date,
     description: post.excerpt,
-    keywords: post.tags,
+    keywords: [...post.tags],
+    alternates: {
+      canonical: `/blog/${post.slug}`,
+    },
   }
 }
 export default async function BlogPost({ params }: any) {
