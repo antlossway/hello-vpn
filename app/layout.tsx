@@ -15,7 +15,7 @@ const josefinSans = Josefin_Sans({
 // favicon.ico and opengraph-image.png are in /app, not in /public
 export const metadata: Metadata = {
   title: {
-    template: "%s | HelloVPN",
+    template: "%s | Hello-VPN",
     default: "Hello-VPN",
   },
   description:
@@ -39,6 +39,10 @@ export const metadata: Metadata = {
     "site to site",
     "outsourcing",
   ],
+  // <link rel="canonical" href="https://hello-vpn.com/"> in head to indicate the preferred canonical URL for the page
+  alternates: {
+    canonical: "/",
+  },
 }
 
 export default function RootLayout({
