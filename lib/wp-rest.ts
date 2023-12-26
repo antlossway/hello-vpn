@@ -47,8 +47,8 @@ const extractDataFromPost = (
       excerpt: post?.excerpt.rendered,
       featuredImgUrl: post?.acf.featured_image_url,
       tags: post?.tags.map((tagId: number) => tagMap.get(tagId)), // array of tag names
-      date: formatDate(post?.date),
-      modified: formatDate(post?.modified),
+      date: post?.date,
+      modified: post?.modified,
     }
   }
 
@@ -58,8 +58,8 @@ const extractDataFromPost = (
     excerpt: post?.excerpt.rendered,
     featuredImgUrl: post?.acf.featured_image_url,
     tags: post?.tags.map((tagId: number) => tagMap.get(tagId)), // array of tag names
-    date: formatDate(post?.date),
-    modified: formatDate(post?.modified),
+    date: post?.date,
+    modified: post?.modified,
   }
 }
 

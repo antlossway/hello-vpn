@@ -17,7 +17,8 @@ type Props = {
 const BlogPage = async ({ searchParams }: Props) => {
   const { tag } = searchParams
 
-  const { posts, totalNumOfPost } = await getAllPosts()
+  const { posts } = await getAllPosts()
+  // console.log("debug posts: ", posts)
 
   if (!posts) {
     return <p className="mt-10 text-center">Sorry, no posts available</p>
