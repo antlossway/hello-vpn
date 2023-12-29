@@ -61,8 +61,10 @@ export default function RootLayout({
       </body>
       <Script
         async
-        src="https://umami-analytics-tawny.vercel.app/script.js"
-        data-website-id="fecd0ddb-b5b1-4916-81b0-f1880ff84813"
+        // src="https://umami-analytics-tawny.vercel.app/script.js"
+        // data-website-id="fecd0ddb-b5b1-4916-81b0-f1880ff84813"
+        src="https://umami-vercel-eta.vercel.app/script.js"
+        data-website-id="8d9bf735-2a3a-4565-8f68-d4d072457440"
       />
     </html>
   )
