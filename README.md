@@ -1,4 +1,7 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Why this document
+
+Hello-VPN is a project that provide B2B site-to-site IPsec VPN service.
+This README take notes of what I learned when building this website
 
 ## Image Attribute
 
@@ -25,6 +28,26 @@ const DottedLeft = ({fill}:{fill:string}) => {
 <DottedLeft fill="#2dddba">
 ```
 
+### tailwindcss
+
+#### use `marker` CSS pseudo element
+
+when making a list, use `marker` to modify list content and style.
+The `content` can be text,image, html symbol, ...etc.
+Example:
+
+```
+// \2713 is an html cross symbol
+        <ul className="space-y-2 flex-1 marker:content-['\2713'] marker:text-primary-500 [&>*]:pl-2">
+          {features.map((feature) => (
+            <li key={feature}>
+              {feature}
+            </li>
+          ))}
+```
+
+If not using `marker`, need to add a image beside the text of list item, which is the current design on this website.
+
 ## generate sitemap
 
 ### use next-sitemap
@@ -47,6 +70,10 @@ module.exports = {
 npm run build
 
 ```
+
+## Next.js dynamic sitemap
+
+use sitemap.ts at root level
 
 ## metadata
 
