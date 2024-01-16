@@ -8,7 +8,7 @@ export default function PostListItem({ post }: { post: any }) {
   // console.log("debug postListItem: ", modified, typeof modified)
 
   return (
-    <li className="mt-4 text-xl dark:text-white/90 flex flex-col items-center sm:flex-row   ">
+    <li className="mt-4 text-xl dark:text-white/90 flex flex-col items-start sm:flex-row sm:items-center   ">
       <Link
         className="underline hover:text-black/70 dark:hover:text-white"
         href={`/blog/${slug}`}
