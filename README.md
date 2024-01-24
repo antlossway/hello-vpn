@@ -142,6 +142,18 @@ export const myAxios = axios.create({
 })
 ```
 
+## Disable search engine index for wordpress site
+
+Since we only use wordpress as headless CMS, wp.ameex-mobile.com should not appear in the search result, otherwise there could be problem of duplicate content.
+
+Login to the server that hosts wordpress, go to root directory of the site, for my case `/opt/bitnami/wordpress`, create a `robots.txt`, put in content
+
+```
+# *
+User-agent: *
+Disallow: /
+```
+
 ## Reference
 
 [https://developer.wordpress.org/news/2023/12/01/styles-patterns-and-more-with-the-details-block/](https://developer.wordpress.org/news/2023/12/01/styles-patterns-and-more-with-the-details-block/)

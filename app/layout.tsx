@@ -66,6 +66,21 @@ export default function RootLayout({
         src="https://umami-vercel-eta.vercel.app/script.js"
         data-website-id="8d9bf735-2a3a-4565-8f68-d4d072457440"
       />
+      {/* Google tag (gtag.js) */}
+      <Script
+        async
+        src="https://www.googletagmanager.com/gtag/js?id=AW-11481079033"
+      />
+      <Script
+        id="gtag-init"
+        dangerouslySetInnerHTML={{
+          __html: `window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'AW-11481079033');`,
+        }}
+      />
     </html>
   )
 }
