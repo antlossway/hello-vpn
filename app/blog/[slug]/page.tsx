@@ -1,11 +1,18 @@
 import React from "react"
 import BackToList from "@/components/shared/BackToList"
-import { getSinglePost } from "@/lib/wp-rest"
+import { getAllPosts, getSinglePost } from "@/lib/wp-rest"
 import parseHTML from "html-react-parser"
 import ThemeSwitch from "@/components/ThemeSwitch"
 import BlogHeader from "@/components/blog/BlogHeader"
 
 export const revalidate = parseInt(process.env.REVALIDATE_INTERVAL || "60")
+
+export async function generateStaticParams() {
+  const { posts } = await getAllPosts()
+  return posts.map((post: any) => ({
+    slug: post.slug,
+  }))
+}
 
 export async function generateMetadata({ params }: any) {
   const { slug } = params

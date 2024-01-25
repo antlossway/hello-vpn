@@ -154,6 +154,21 @@ User-agent: *
 Disallow: /
 ```
 
+## Next.js
+
+### How to statically generate blog posts to speed up /blog speed
+
+```
+// @app/blog/[slug]/page.tsx
+
+export async function generateStaticParams() {
+  const { posts } = await getAllPosts()
+  return posts.map((post: any) => ({
+    slug: post.slug,
+  }))
+}
+```
+
 ## Reference
 
 [https://developer.wordpress.org/news/2023/12/01/styles-patterns-and-more-with-the-details-block/](https://developer.wordpress.org/news/2023/12/01/styles-patterns-and-more-with-the-details-block/)
