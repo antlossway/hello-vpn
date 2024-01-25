@@ -81,6 +81,14 @@ body {
     brightness(94%) contrast(84%);
 }
 
+/* reset details default cursor style */
+details summary {
+  cursor: pointer;
+}
+details summary > * {
+  display: inline;
+}
+
 /* Add a custom transition when opening/closing. */
 .wp-block-details {
   transition: all 0.3s ease-in-out;

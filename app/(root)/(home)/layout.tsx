@@ -7,7 +7,7 @@ import Navbar from "@/components/Navbar"
 // export const metadata = {
 //   title: "HelloVPN",
 //   description:
-//     "Outsourcing site-to-site VPN service for your business, no bullshit, it works.",
+//     "Outsourcing site-to-site VPN service for your business, no BS, it works.",
 // }
 
 export default function Layout({ children }: { children: React.ReactNode }) {

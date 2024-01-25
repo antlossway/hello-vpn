@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     default: "Hello-VPN",
   },
   description:
-    "Outsourcing site-to-site VPN service for your business, no bullshit, it works. Powered by AMEEX|mobile.",
+    "Outsourcing site-to-site VPN service for your business, no BS, it works. Powered by AMEEX|mobile.",
   metadataBase: new URL(process.env.SITE_URL!),
   icons: {
     icon: "/favicon.ico",

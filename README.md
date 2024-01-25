@@ -101,6 +101,27 @@ That's why it did not work before.
 
 ### styling trick
 
+FAQ page on wordpress used "Details" widget, which is implemented by HTML disclosure widget (`details` + `summary` HTML element),
+There are two styling issues:
+
+- `summary` cursor pointer
+- nested block elements in `summary`
+  [https://css-tricks.com/two-issues-styling-the-details-element-and-how-to-solve-them/](https://css-tricks.com/two-issues-styling-the-details-element-and-how-to-solve-them/)
+
+CSS reset fix
+
+```
+// global.css
+
+details summary {
+  cursor: pointer;
+}
+
+details summary > * {
+  display: inline;
+}
+```
+
 Example: `details`
 
 ```

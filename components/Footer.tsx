@@ -42,7 +42,7 @@ const Footer = () => {
               href="/about"
               className="mt-4 text-sm text-center md:text-left text-color-link "
             >
-              No Bullshit
+              No BS
             </Link>
             <p className=" text-center text-sm text-white/30 md:text-right">
               Copyright &copy; {currentYear}. All rights reserved.

@@ -163,7 +163,7 @@ const ContactForm = () => {
       {/* if message submitted successfully, notify the user */}
       {formStatus === "success" && (
         <div className="mt-6 text-center text-green-600 dark:text-green-400">
-          Thank you, we will come back to you soon!
+          Thank you, we will come back to you very soon!
         </div>
       )}
       {/* if error, notify the user */}
