@@ -59,7 +59,8 @@ const ContactForm = () => {
   const [values, setValues] = React.useState({
     name: "",
     email: "",
-    message: "",
+    message:
+      "Hello guys, I need some help with my VPN. Can you please contact me asap?",
   })
 
   const resetForm = () => {
@@ -135,7 +136,7 @@ const ContactForm = () => {
       <div className="mb-6">
         <InputItem
           name="message"
-          placeholder="Your Message"
+          placeholder="Hello guys, I need some help with my VPN. Can you please contact me asap?"
           type="textarea"
           onChange={onChange}
           values={values}
