@@ -1,21 +1,18 @@
 /* eslint-disable react/no-unescaped-entities */
 
 // import ThemeSwitch from "@/components/ThemeSwitch"
-import TeamCard from "@/components/cards/TeamCard"
 import CornerShape from "@/components/decoration/CornerShape"
 import DottedLeft from "@/components/decoration/DottedLeft"
 import DottedRight from "@/components/decoration/DottedRight"
 import ContactForm from "@/components/forms/ContactForm"
 import EngageForm from "@/components/forms/EngageForm"
-import SiteLogo from "@/components/shared/SiteLogo"
-import { team } from "@/constants/data"
+import EngageFormLoops from "@/components/forms/EngageFormLoops"
 import Image from "next/image"
-import Link from "next/link"
 import React from "react"
 
 const ContactPage = () => {
   return (
-    <section className=" py-20 overflow-hidden relative">
+    <section className="py-20 overflow-hidden relative">
       <div className="container mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-10">
           {/* leftside title and info */}
@@ -83,7 +80,12 @@ const ContactPage = () => {
             <div className="bg-white dark:bg-darkmode-800 relative rounded-lg p-8 sm:p-12 shadow-lg">
               {/* <ContactForm /> */}
               {/* <div className="ml-embedded" data-form="WfQMzh"></div> */}
-              <EngageForm />
+
+              {/* use mailer lite */}
+              {/* <EngageForm /> */}
+
+              {/* use loop.so */}
+              <EngageFormLoops />
 
               <div>
                 <span className="absolute -top-10 -right-9 z-[-1]">
