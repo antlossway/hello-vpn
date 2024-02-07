@@ -81,9 +81,8 @@ export default function RootLayout({
           gtag('config', 'AW-11481079033');`,
         }}
       />
-      {/* mailer lite form */}
-
-      <Script
+      {/* mailer lite form - not in use */}
+      {/* <Script
         id="mailerlite"
         dangerouslySetInnerHTML={{
           __html: `
@@ -94,7 +93,7 @@ export default function RootLayout({
     ml('account', '793482');
         `,
         }}
-      />
+      /> */}
     </html>
   )
 }

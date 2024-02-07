@@ -200,7 +200,7 @@ export default function EngageFormLoops() {
                 padding: "8px 12px",
               }}
             />
-            <SignUpFormButton />
+            <SignUpFormButton email={email} />
           </form>
         </div>
       )
@@ -252,10 +252,16 @@ export default function EngageFormLoops() {
     )
   }
 
-  function SignUpFormButton({ props }: any) {
+  type SignUpFormButtonProps = {
+    email: string
+  }
+  function SignUpFormButton(props: SignUpFormButtonProps) {
+    const { email } = props
     return (
       <button
         type="submit"
+        data-umami-event="email_signup"
+        data-umami-event-email={email}
         style={{
           background: formStyles.buttonColor,
           fontSize: `${formStyles.buttonFontSizePx}px`,
