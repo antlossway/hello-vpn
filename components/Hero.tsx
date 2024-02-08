@@ -30,7 +30,7 @@ const Hero = () => {
           </p>
           <div className="mt-4 md:mt-8">
             <ButtonCTA
-              link="/#pricing"
+              link="/contact"
               text="Get Started Today"
               btnId="btn-hero-cta"
               dataUmamiEvent="Hero CTA"
