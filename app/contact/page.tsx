@@ -34,8 +34,8 @@ const ContactPage = () => {
                   <p className="text-base text-gray-500 leading-relaxed">
                     Send us an email to{" "}
                     <span className="text-primary-500">info@hello-vpn.com</span>{" "}
-                    or type your email in the form. We'll come back to you very
-                    soon.
+                    {/* or type your email in the form.  */}
+                    or fill out the form. We'll come back to you very soon.
                   </p>
                 </div>
               </div>
@@ -81,11 +81,11 @@ const ContactPage = () => {
               {/* <ContactForm /> */}
               {/* <div className="ml-embedded" data-form="WfQMzh"></div> */}
 
-              {/* use mailer lite */}
-              {/* <EngageForm /> */}
+              {/* use mailer lite or google form*/}
+              <EngageForm />
 
               {/* use loop.so */}
-              <EngageFormLoops />
+              {/* <EngageFormLoops /> */}
 
               <div>
                 <span className="absolute -top-10 -right-9 z-[-1]">
