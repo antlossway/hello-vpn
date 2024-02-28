@@ -81,6 +81,9 @@ export default function RootLayout({
           gtag('config', 'AW-11481079033');`,
         }}
       />
+
+      {/* TIdio chatbot */}
+      <Script src="//code.tidio.co/u0zohmpaom2tx9fyvsziacxxzs2ttysw.js" async />
       {/* mailer lite form - not in use */}
       {/* <Script
         id="mailerlite"
