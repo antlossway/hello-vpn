@@ -1,6 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 
 // import ThemeSwitch from "@/components/ThemeSwitch"
+import WhatsAppBtn from "@/components/WhatsAppBtn"
 import CornerShape from "@/components/decoration/CornerShape"
 import DottedLeft from "@/components/decoration/DottedLeft"
 import DottedRight from "@/components/decoration/DottedRight"
@@ -19,7 +20,7 @@ const ContactPage = () => {
           <div className=" order-2 md:order-1 w-full px-4 mb-10 md:mb-0">
             <div className=" max-w-[570px] h-full flex flex-col justify-between">
               {/* email icon and email */}
-              <div className=" p-4 mb-10 flex items-start gap-4">
+              <div className=" p-4 mb-2 flex items-start gap-4">
                 <figure className="p-3.5 bg-primary-100 rounded-full grid place-content-center place-items-center shrink-0">
                   <Image
                     src="/icons/icon-mail.svg"
@@ -38,6 +39,9 @@ const ContactPage = () => {
                     or fill out the form. We'll come back to you very soon.
                   </p>
                 </div>
+              </div>
+              <div className=" p-4 mb-10 flex items-start gap-4">
+                <WhatsAppBtn />
               </div>
 
               {/* team */}

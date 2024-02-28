@@ -13,7 +13,7 @@ const Hero = () => {
       {/* leftside text */}
       <div className="p-4 md:p-12 lg:px-16  flex flex-col ">
         <div className="flex-1 max-w-xl text-left ltr:sm:text-left rtl:sm:text-right ">
-          <h1 className="h1-bold ">
+          <h1 className="h1-bold">
             <span>B2B VPN services by </span>
             <span className="text-primary-500  ">Hello-VPN</span>
           </h1>
