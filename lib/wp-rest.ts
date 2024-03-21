@@ -1,7 +1,7 @@
 import { formatDate } from "@/lib/utils"
 // wordpress rest API
 
-import { myAxios } from "@/lib/myAxios"
+import { myAxios, myFetch } from "@/lib/myAxios"
 import qs from "qs"
 import { postType } from "@/app/types"
 // import { postType, postsType } from "../../data";
@@ -80,12 +80,15 @@ export async function getAllPosts() {
     slug,
   }))
 
-  const res = await myAxios.get("/posts?orderby=date&order=desc")
-  const data = res.data
+  // const res = await myAxios.get("/posts?orderby=date&order=desc")
+  // const data = res.data
+  const data = await myFetch("/posts?orderby=date&order=desc")
+
   const posts = data.map((post: any) => extractDataFromPost(post, tagMap))
 
-  const totalNumOfPost = parseInt(res.headers["x-wp-total"])
-  //   console.log({ totalNumOfPost }, { posts })
+  // const totalNumOfPost = parseInt(res.headers["x-wp-total"])
+  const totalNumOfPost = posts.length
+  // console.log("debug totalNumOfPost: ", totalNumOfPost)
 
   const result = {
     posts: posts,
@@ -113,9 +116,7 @@ export async function getAllPosts() {
 // change below function to arrow function due to some strange typescript error, and add named export "export { getCategories }"
 // export async function getCategories(): Promise<{Map<number, string>, Map<string,number>}>
 const getCategories = async () => {
-  const res = await myAxios.get("/categories?_fields=id,slug")
-  const data = res.data //array of object
-  // console.log(data, Array.isArray(data));
+  const data = await myFetch("/categories?_fields=id,slug")
 
   const categoryMap = new Map() // id to name
   const categoryMapNameToId = new Map() // name to id
@@ -132,9 +133,10 @@ export { getCategories }
 
 // getTags
 export const getTags = async () => {
-  const res = await myAxios.get("/tags?_fields=id,slug")
-  const data = res.data //array of object
-  // console.log(data, Array.isArray(data));
+  // const res = await myAxios.get("/tags?_fields=id,slug")
+  // const data = res.data //array of object
+  const data = await myFetch("/tags?_fields=id,slug")
+  // console.log("debug myFetch getTags:", data, Array.isArray(data))
 
   const tagMap = new Map() // id to name
   const tagMapNameToId = new Map() // name to id
@@ -160,12 +162,13 @@ export async function getSinglePost(slug: string) {
     }
   )
 
-  const res = await myAxios.get(`/posts?${query}`)
-  const post = res.data[0]
-  // console.log(post);
+  // const res = await myAxios.get(`/posts?${query}`)
+  // const post = res.data[0]
+  const data = await myFetch(`/posts?${query}`)
+  const post = data[0]
   const postData = extractDataFromPost(post, tagMap, true)
-
   // console.log("debug getSinglePost: ", postData)
+
   return postData
 }
 
@@ -190,9 +193,10 @@ export async function getPage(slug: string) {
       encodeValuesOnly: true,
     }
   )
-  const res = await myAxios.get(`/pages?${query}`)
-  const page = res.data[0]
-
+  // const res = await myAxios.get(`/pages?${query}`)
+  // const page = res.data[0]
+  const data = await myFetch(`/pages?${query}`)
+  const page = data[0]
   return {
     slug: page?.slug,
     title: page?.title.rendered,
