@@ -5,7 +5,7 @@ import { getAllPosts } from "@/lib/wp-rest"
 import { Metadata } from "next"
 // import ThemeSwitch from "@/components/ThemeSwitch"
 
-export const revalidate = parseInt(process.env.REVALIDATE_INTERVAL || "60")
+// export const revalidate = parseInt(process.env.REVALIDATE_INTERVAL || "60")
 
 export const metadata: Metadata = {
   title: "Blog",

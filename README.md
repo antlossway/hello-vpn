@@ -1,7 +1,7 @@
 # Why this document
 
 Hello-VPN is a project that provide B2B site-to-site IPsec VPN service.
-This README take notes of what I learned when building this website
+This README take notes of what I learned when building this website.
 
 ## Image Attribute
 
@@ -148,7 +148,7 @@ To style `summary`, we can add in global.css
 }
 ```
 
-## How to add authentication to REST API
+## How to add authentication to Wordpress REST API
 
 install plugin **WordPress REST API Authentication by miniOrange,**
 
@@ -187,6 +187,51 @@ export async function generateStaticParams() {
   return posts.map((post: any) => ({
     slug: post.slug,
   }))
+}
+```
+
+### why the blog index page always appear as dynamically rendered?
+
+When using `npm run build`, I noticed the /blog is dynamically rendered, output like below:
+├ λ /api/revalidate 0 B 0 B
+├ λ /blog 3.42 kB 94.1 kB
+├ ● /blog/[slug] 175 B 90.8 kB
+├ ├ /blog/cisco-site-to-site-vpn-with-ikev2
+├ ├ /blog/cisco-gre-tunnel-nat-ipsec
+├ ├ /blog/how-to-build-gre-over-ipsec-on-aws-cisco-csr1000v
+├ └ [+6 more paths]
+
+Then I realize it's due to a tag filter
+
+```
+ const BlogPage = async ({ searchParams }: Props) => {
+   const { tag } = searchParams
+```
+
+When the request URL like /blog?tag=vpn , the displayed dataset will filter based on the tag, this makes the page dynamic. When I remove the tag functionality from the code, `npm run build` is displaying /blog as SSG.
+
+├ λ /api/revalidate 0 B 0 B
+├ ○ /blog 178 B 90.8 kB
+├ ● /blog/[slug] 179 B 90.8 kB
+├ ├ /blog/cisco-site-to-site-vpn-with-ikev2
+├ ├ /blog/cisco-gre-tunnel-nat-ipsec
+├ ├ /blog/how-to-build-gre-over-ipsec-on-aws-cisco-csr1000v
+├ └ [+6 more paths]
+
+### use fetch instead of axios
+
+In order to take advantage of Next.js's built-in caching feature, I replaced axios call to use `fetch` instead.
+
+```
+export const myFetch = async (url: string) => {
+  const res = await fetch(`${process.env.WP_API_URL}${url}`, {
+    headers: {
+      Authorization: `Basic ${process.env.WP_BASIC_AUTH}`,
+    },
+    next: { revalidate: parseInt(process.env.REVALIDATE_INTERVAL || "60") },
+  })
+  const data = await res.json()
+  return data
 }
 ```
 
