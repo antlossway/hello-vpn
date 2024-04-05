@@ -33,7 +33,7 @@ const WhyUs = () => {
                 </figure>
                 <h4 className="h4-bold color-h2 uppercase">{item.title}</h4>
               </div>
-              <p className="mt-2 max-w-[50ch] color-paragraph text-sm">
+              <p className="mt-2 max-w-[50ch] color-paragraph card-text">
                 {item.description}
               </p>
             </div>

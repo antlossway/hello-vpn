@@ -36,7 +36,7 @@ const TeamCard = ({
         </div>
       </div>
 
-      <p className="mt-1 text-sm text-gray-800 dark:text-white/60">
+      <p className="mt-1 card-text text-gray-800 dark:text-white/60">
         {description}
       </p>
     </div>

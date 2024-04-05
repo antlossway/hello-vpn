@@ -17,7 +17,7 @@ const Navbar = ({ withThemeSwitch = true }: Props) => {
     <header>
       <nav
         id="navbar"
-        className=" z-200 h-24 xl:h-48 transition-height px-8 py-6 flex justify-between items-center footer-gradient rounded-bl-[80px] sm:px-12 lg:px-16 "
+        className=" z-200 h-24 xl:h-48 transition-height px-8 py-6 flex justify-between items-center footer-gradient rounded-bl-[80px] sm:px-12 lg:px-16 font-outfit "
       >
         {/* icon */}
         {/* <div className="flex gap-4">

@@ -11,7 +11,7 @@ const About = async () => {
 
   return (
     // calculate height to avoid useless vertical scrolling: height header 6rem (12rem when xl screen), footer 9rem
-    <div className=" min-h-[calc(100vh-6rem-9rem)] xl:min-h-[calc(100vh-12rem-9rem)] hero-bg-color py-10">
+    <div className="font-outfit min-h-[calc(100vh-6rem-9rem)] xl:min-h-[calc(100vh-12rem-9rem)] hero-bg-color py-10">
       <article className=" p-4 mx-auto prose prose-base md:prose-lg prose-slate dark:prose-invert prose-a:text-blue-500 prose-a:no-underline hover:prose-a:underline">
         <h1>{post.title}</h1>
 

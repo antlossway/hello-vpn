@@ -1,5 +1,5 @@
 import type { Metadata } from "next"
-import { Inter, Josefin_Sans } from "next/font/google"
+import { Josefin_Sans, Outfit } from "next/font/google"
 import "./globals.css"
 import ThemeSwitch from "@/components/ThemeSwitch"
 import Navbar from "@/components/Navbar"
@@ -7,11 +7,11 @@ import Footer from "@/components/Footer"
 import { ThemeProvider } from "@/context/ThemeProvider"
 import Script from "next/script"
 
-const inter = Inter({ subsets: ["latin"], variable: "--font-inter" })
 const josefinSans = Josefin_Sans({
   subsets: ["latin"],
   variable: "--font-josefin",
 })
+const outfit = Outfit({ subsets: ["latin"], variable: "--font-outfit" })
 // favicon.ico and opengraph-image.png are in /app, not in /public
 export const metadata: Metadata = {
   title: {
@@ -53,7 +53,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${inter.variable} ${josefinSans.variable} antialiased  text-dark-800 dark:bg-darkmode-900 dark:text-light-100`}
+        className={` ${josefinSans.variable} ${outfit.variable} antialiased  text-dark-800 dark:bg-darkmode-900 dark:text-light-100`}
       >
         <ThemeProvider>{children}</ThemeProvider>
         {/* ThemeSwitch has to be at the bottom */}

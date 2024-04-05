@@ -29,6 +29,12 @@
   .h4-bold {
     @apply font-josefin text-xl font-bold md:text-2xl;
   }
+  .body-style {
+    @apply font-outfit leading-[1.7rem] text-gray-600 dark:text-white/80;
+  }
+  .card-text {
+    @apply font-outfit text-sm leading-6;
+  }
   .color-paragraph {
     @apply text-gray-500 dark:text-white/60;
   }
@@ -68,7 +74,8 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb)); */
-  font-family: "Inter", sans-serif;
+  /* font-family: "Inter", sans-serif; */
+  font-family: "Outfit", sans-serif;
 }
 
 /* .primary-gradient {

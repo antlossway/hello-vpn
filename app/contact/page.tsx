@@ -13,7 +13,7 @@ import React from "react"
 
 const ContactPage = () => {
   return (
-    <section className="py-20 overflow-hidden relative">
+    <section className="py-20 overflow-hidden relative font-outfit">
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-2 gap-10">
           {/* leftside title and info */}
@@ -62,7 +62,7 @@ const ContactPage = () => {
               <div className="p-4 text-center ">
                 {/* address */}
                 <div className="">
-                  <p className="text-base">powered by AMEEX|mobile</p>
+                  <p className="font-medium">Powered by AMEEX|mobile</p>
                   <p className="text-sm text-gray-500">Grande-Rue 41,</p>
                   <p className="text-sm text-gray-500">1196 Gland,</p>
                   <p className="text-sm text-gray-500">Switzerland</p>

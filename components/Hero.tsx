@@ -17,12 +17,12 @@ const Hero = () => {
             <span>B2B VPN services by </span>
             <span className="text-primary-500  ">Hello-VPN</span>
           </h1>
-          <p className="text-gray-600 dark:text-white/80 mt-4">{heroText}</p>
+          <p className="body-style mt-4">{heroText}</p>
           {/* punch line */}
           <p className="mt-1 text-xl tracking-tight font-bold font-josefin ">
             Don't let VPN setup and maintenance slow you down.
           </p>{" "}
-          <p className="text-gray-600 dark:text-white/80">
+          <p className="body-style">
             {/* We are here to handle the heavy lifting for you.  */}
             {/* We can help you to build a suitable solution and maintain it for
             you. */}

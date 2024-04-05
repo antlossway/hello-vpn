@@ -47,7 +47,7 @@ const PricingCard = ({
         active
           ? "border-primary-500   ring-1 ring-primary-500"
           : "border-gray-200"
-      } `}
+      } font-outfit `}
     >
       <div className=" h-full flex flex-col items-stretch gap-4">
         {/* package name and price */}
@@ -61,7 +61,7 @@ const PricingCard = ({
           )}
 
           <p className="mt-2 sm:mt-4">
-            <strong className="text-3xl font-bold color-h2 sm:text-4xl">
+            <strong className="text-3xl font-semibold color-h2 sm:text-4xl">
               {price}€{/* euro sign */}
             </strong>
 
@@ -70,7 +70,7 @@ const PricingCard = ({
         </div>
 
         {/* features */}
-        <ul className="space-y-2 flex-1">
+        <ul className="space-y-2 flex-1 card-text">
           {features.map((feature) => (
             <li key={feature}>
               <FeatureItem>{feature}</FeatureItem>

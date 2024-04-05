@@ -26,7 +26,7 @@ const ButtonCTA = ({
       id={btnId || undefined}
       data-umami-event={dataUmamiEvent || undefined}
     >
-      <span className="text-center">{text}</span>
+      <span className="text-center font-outfit">{text}</span>
     </Link>
   )
 }

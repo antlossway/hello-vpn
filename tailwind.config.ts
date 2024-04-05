@@ -45,8 +45,9 @@ const config: Config = {
         },
       },
       fontFamily: {
-        inter: ["var(--font-inter)"],
+        // inter: ["var(--font-inter)"],
         josefin: ["var(--font-josefin)"],
+        outfit: ["var(--font-outfit)"],
       },
       transitionProperty: {
         height: "height",
