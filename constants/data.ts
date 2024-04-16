@@ -92,7 +92,7 @@ export const PricingData = [
       "Configuration of your VPNs",
       "Backup of VPN configuration",
       "Real-time Monitoring of all VPN",
-      "Email support (response within 12 hours)",
+      "Email support",
     ],
     active: true,
   },
@@ -148,5 +148,5 @@ export const team = [
 ]
 
 export const heroText =
-  // "Site-to-Site VPN is the common solution to secure the connection between two sites. However, it can be a challenging task due to various requirements."
-  "Site-to-Site IPsec VPN is the common solution to secure the connection between two sites. However, it's a challenging task if you don't have a dedicated personnel to handle it or your peer has unusual VPN requirements. We have 15 plus years of experience of dealing those challenges."
+  // "Site-to-Site IPsec VPN is the common solution to secure the connection between two sites. However, it's a challenging task if you don't have a dedicated personnel to handle it or your peer has unusual VPN requirements. We have 15 plus years of experience of dealing those challenges."
+  "Do you want your team to focus on building products/services instead of spending time troubleshooting Site-to-Site VPN? We have 15 plus years of experience to deal with those challenges. Let's team up!"
